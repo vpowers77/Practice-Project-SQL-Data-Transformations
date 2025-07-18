@@ -1,0 +1,42 @@
+SQL Sample Queries
+
+SELECT *
+    FROM customers
+    LIMIT 10;
+
+
+Out of the first 10 customers, the customer id and the city of customer 
+
+SELECT cus_join_date, cus_last_name
+, cus_state
+, cus_app_cd
+FROM customers
+WHERE cus_join_date > '2001-09-11'
+    AND cus_join_date < '2001-10-01';
+
+All information for customers with last name Delacruz
+
+SELECT  *
+FROM customers
+WHERE cus_last_name = 'Delacruz'
+    LIMIT 2;
+
+Join for customer and order data to get all data from the customers with last name Delacruz 
+
+SELECT cus_id
+,cus_last_name
+,cus_first_name
+,tot_ord_value
+,tot_ord_qty
+FROM customers
+    INNER JOIN orders
+    ON customers.cus_id = orders.
+    WHERE cus_last_name = 'Delacruz'
+
+Identifying all builds that the fork in row 60 is included on in the data. Search for component name by using a conditional query
+
+SELECT *
+        FROM components
+        INNER JOIN builds
+        ON row 60
+        WHERE comp_name;
